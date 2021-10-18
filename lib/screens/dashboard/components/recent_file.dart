@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../constants.dart';
-import '../../../models/recent_files.dart';
+import '../../../models/recent_file_info.dart';
 
-class RecentFiles extends StatelessWidget {
-  const RecentFiles({
+class RecentFileInfoView extends StatelessWidget {
+  const RecentFileInfoView({
     Key? key,
   }) : super(key: key);
 
@@ -43,7 +43,9 @@ class RecentFiles extends StatelessWidget {
               ],
               rows: List.generate(
                 demoRecentFiles.length,
-                (index) => recentFileDataRow(demoRecentFiles[index]),
+                (index) => RecentFileInfoCard(
+                  info: demoRecentFiles[index],
+                ).build(context),
               ),
             ),
           ),
@@ -53,26 +55,36 @@ class RecentFiles extends StatelessWidget {
   }
 }
 
-DataRow recentFileDataRow(RecentFile fileInfo) {
-  return DataRow(
-    cells: [
-      DataCell(
-        Row(
-          children: [
-            SvgPicture.asset(
-              fileInfo.icon!,
-              height: 30,
-              width: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-              child: Text(fileInfo.title!),
-            ),
-          ],
+class RecentFileInfoCard {
+  final RecentFileInfo info;
+
+  const RecentFileInfoCard({
+    required this.info,
+  });
+
+  DataRow build(BuildContext context) {
+    return DataRow(
+      cells: [
+        DataCell(
+          Row(
+            children: [
+              SvgPicture.asset(
+                info.icon!,
+                height: 30,
+                width: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: defaultPadding,
+                ),
+                child: Text(info.title!),
+              ),
+            ],
+          ),
         ),
-      ),
-      DataCell(Text(fileInfo.date!)),
-      DataCell(Text(fileInfo.size!)),
-    ],
-  );
+        DataCell(Text(info.date!)),
+        DataCell(Text(info.size!)),
+      ],
+    );
+  }
 }

@@ -61,6 +61,9 @@ class SideMenu extends StatelessWidget {
 }
 
 class DrawerListTile extends StatelessWidget {
+  final String title, svgSrc;
+  final VoidCallback press;
+
   const DrawerListTile({
     Key? key,
     // For selecting those three line once press 'Command+D'
@@ -68,9 +71,6 @@ class DrawerListTile extends StatelessWidget {
     required this.svgSrc,
     required this.press,
   }) : super(key: key);
-
-  final String title, svgSrc;
-  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,9 @@ class DrawerListTile extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: const TextStyle(color: Colors.white54),
+        style: const TextStyle(
+          color: Colors.white54,
+        ),
       ),
     );
   }

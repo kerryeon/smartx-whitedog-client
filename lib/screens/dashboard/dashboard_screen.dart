@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 import '../../responsive.dart';
-import 'components/my_fields.dart';
+import 'components/file_info.dart';
 import 'components/header.dart';
-import 'components/recent_files.dart';
-import 'components/storage_details.dart';
+import 'components/recent_file.dart';
+import 'components/storage_info.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({
@@ -20,7 +20,9 @@ class DashboardScreen extends StatelessWidget {
         child: Column(
           children: [
             const Header(),
-            const SizedBox(height: defaultPadding),
+            const SizedBox(
+              height: defaultPadding,
+            ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -28,25 +30,31 @@ class DashboardScreen extends StatelessWidget {
                   flex: 5,
                   child: Column(
                     children: [
-                      const MyFiles(),
-                      const SizedBox(height: defaultPadding),
-                      const RecentFiles(),
+                      const FileInfoView(),
+                      const SizedBox(
+                        height: defaultPadding,
+                      ),
+                      const RecentFileInfoView(),
                       if (Responsive.isMobile(context))
-                        const SizedBox(height: defaultPadding),
-                      if (Responsive.isMobile(context)) const StarageDetails(),
+                        const SizedBox(
+                          height: defaultPadding,
+                        ),
+                      if (Responsive.isMobile(context)) const StorageInfoView(),
                     ],
                   ),
                 ),
                 if (!Responsive.isMobile(context))
-                  const SizedBox(width: defaultPadding),
+                  const SizedBox(
+                    width: defaultPadding,
+                  ),
                 // On Mobile means if the screen is less than 850 we dont want to show it
                 if (!Responsive.isMobile(context))
                   const Expanded(
                     flex: 2,
-                    child: StarageDetails(),
+                    child: StorageInfoView(),
                   ),
               ],
-            )
+            ),
           ],
         ),
       ),

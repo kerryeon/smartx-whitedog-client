@@ -26,9 +26,13 @@ class Header extends StatelessWidget {
             style: Theme.of(context).textTheme.headline6,
           ),
         if (!Responsive.isMobile(context))
-          Spacer(flex: Responsive.isDesktop(context) ? 2 : 1),
-        const Expanded(child: SearchField()),
-        const ProfileCard()
+          Spacer(
+            flex: Responsive.isDesktop(context) ? 2 : 1,
+          ),
+        const Expanded(
+          child: SearchField(),
+        ),
+        const ProfileCard(),
       ],
     );
   }
@@ -42,7 +46,9 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: defaultPadding),
+      margin: const EdgeInsets.only(
+        left: defaultPadding,
+      ),
       padding: const EdgeInsets.symmetric(
         horizontal: defaultPadding,
         vertical: defaultPadding / 2,
@@ -50,7 +56,9 @@ class ProfileCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: secondaryColor,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(
+          color: Colors.white10,
+        ),
       ),
       child: Row(
         children: [
@@ -60,7 +68,9 @@ class ProfileCard extends StatelessWidget {
           ),
           if (!Responsive.isMobile(context))
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+              padding: EdgeInsets.symmetric(
+                horizontal: defaultPadding / 2,
+              ),
               child: Text('Angelina Jolie'),
             ),
           const Icon(Icons.keyboard_arrow_down),
@@ -90,7 +100,9 @@ class SearchField extends StatelessWidget {
           onTap: () {},
           child: Container(
             padding: const EdgeInsets.all(defaultPadding * 0.75),
-            margin: const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+            margin: const EdgeInsets.symmetric(
+              horizontal: defaultPadding / 2,
+            ),
             decoration: const BoxDecoration(
               color: primaryColor,
               borderRadius: BorderRadius.all(Radius.circular(10)),
