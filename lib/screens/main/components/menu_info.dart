@@ -15,6 +15,7 @@ class MenuInfoView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
+        primary: false,
         children: [
           DrawerHeader(
             child: Image.asset('assets/images/logo.png'),

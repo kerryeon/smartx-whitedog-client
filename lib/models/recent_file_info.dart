@@ -1,3 +1,53 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../constants.dart';
+import 'templates/data_table.dart';
+
+class RecentFileInfoKey with DataTableKey<RecentFileInfo> {
+  @override
+  List<DataColumn> columns() {
+    return const [
+      DataColumn(
+        label: Text('File Name'),
+      ),
+      DataColumn(
+        label: Text('Date'),
+      ),
+      DataColumn(
+        label: Text('Size'),
+      ),
+    ];
+  }
+
+  @override
+  DataRow row(RecentFileInfo item) {
+    return DataRow(
+      cells: [
+        DataCell(
+          Row(
+            children: [
+              SvgPicture.asset(
+                item.icon!,
+                height: 30,
+                width: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: defaultPadding,
+                ),
+                child: Text(item.title!),
+              ),
+            ],
+          ),
+        ),
+        DataCell(Text(item.date!)),
+        DataCell(Text(item.size!)),
+      ],
+    );
+  }
+}
+
 class RecentFileInfo {
   final String? icon, title, date, size;
 
@@ -9,7 +59,7 @@ class RecentFileInfo {
   });
 }
 
-List demoRecentFiles = const [
+List<RecentFileInfo> demoRecentFiles = const [
   RecentFileInfo(
     icon: 'assets/icons/xd_file.svg',
     title: 'XD File',

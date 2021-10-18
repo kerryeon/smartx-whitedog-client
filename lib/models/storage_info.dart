@@ -10,7 +10,7 @@ class StorageInfo {
   });
 }
 
-List demoStorageInfos = const [
+List<StorageInfo> demoStorageInfos = const [
   StorageInfo(
     svgSrc: 'assets/icons/Documents.svg',
     title: 'Documents Files',

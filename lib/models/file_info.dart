@@ -17,7 +17,7 @@ class FileInfo {
   });
 }
 
-List demoMyFiles = const [
+List<FileInfo> demoMyFiles = const [
   FileInfo(
     title: 'Documents',
     numOfFiles: 1328,

@@ -7,7 +7,7 @@ class MenuInfo {
   });
 }
 
-List demoMenuItems = const [
+List<MenuInfo> demoMenuItems = const [
   MenuInfo(
     title: 'Dashboard',
     svgSrc: 'assets/icons/menu_dashbord.svg',
