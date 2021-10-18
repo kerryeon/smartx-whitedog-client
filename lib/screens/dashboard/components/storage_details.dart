@@ -19,35 +19,35 @@ class StarageDetails extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
+        children: const [
+          Text(
             'Storage Details',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w500,
             ),
           ),
-          const SizedBox(height: defaultPadding),
-          const Chart(),
-          const StorageInfoCard(
+          SizedBox(height: defaultPadding),
+          Chart(),
+          StorageInfoCard(
             svgSrc: 'assets/icons/Documents.svg',
             title: 'Documents Files',
             amountOfFiles: '1.3GB',
             numOfFiles: 1328,
           ),
-          const StorageInfoCard(
+          StorageInfoCard(
             svgSrc: 'assets/icons/media.svg',
             title: 'Media Files',
             amountOfFiles: '15.3GB',
             numOfFiles: 1328,
           ),
-          const StorageInfoCard(
+          StorageInfoCard(
             svgSrc: 'assets/icons/folder.svg',
             title: 'Other Files',
             amountOfFiles: '1.3GB',
             numOfFiles: 1328,
           ),
-          const StorageInfoCard(
+          StorageInfoCard(
             svgSrc: 'assets/icons/unknown.svg',
             title: 'Unknown',
             amountOfFiles: '1.3GB',
