@@ -26,7 +26,7 @@ class DataTableView<Value> extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Recent Files',
+            tableKey.title,
             style: Theme.of(context).textTheme.subtitle1,
           ),
           SizedBox(

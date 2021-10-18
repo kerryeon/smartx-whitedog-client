@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants.dart';
-import '../../../models/file_info.dart';
+import '../../../models/storage_info_row.dart';
 import '../../../responsive.dart';
 
-class FileInfoView extends StatelessWidget {
-  const FileInfoView({
+class StorageInfoRowView extends StatelessWidget {
+  const StorageInfoRowView({
     Key? key,
   }) : super(key: key);
 
@@ -40,12 +40,12 @@ class FileInfoView extends StatelessWidget {
           height: defaultPadding,
         ),
         Responsive(
-          mobile: FileInfoCardView(
+          mobile: StorageInfoCardView(
             crossAxisCount: _size.width < 650 ? 2 : 4,
             childAspectRatio: _size.width < 650 && _size.width > 350 ? 1.3 : 1,
           ),
-          tablet: const FileInfoCardView(),
-          desktop: FileInfoCardView(
+          tablet: const StorageInfoCardView(),
+          desktop: StorageInfoCardView(
             childAspectRatio: _size.width < 1400 ? 1.1 : 1.4,
           ),
         ),
@@ -54,11 +54,11 @@ class FileInfoView extends StatelessWidget {
   }
 }
 
-class FileInfoCardView extends StatelessWidget {
+class StorageInfoCardView extends StatelessWidget {
   final int crossAxisCount;
   final double childAspectRatio;
 
-  const FileInfoCardView({
+  const StorageInfoCardView({
     Key? key,
     this.crossAxisCount = 4,
     this.childAspectRatio = 1,
@@ -76,20 +76,20 @@ class FileInfoCardView extends StatelessWidget {
         mainAxisSpacing: defaultPadding,
         childAspectRatio: childAspectRatio,
       ),
-      itemBuilder: (context, index) => FileInfoCard(
+      itemBuilder: (context, index) => StorageInfoCard(
         info: demoMyFiles[index],
       ),
     );
   }
 }
 
-class FileInfoCard extends StatelessWidget {
-  const FileInfoCard({
+class StorageInfoCard extends StatelessWidget {
+  const StorageInfoCard({
     Key? key,
     required this.info,
   }) : super(key: key);
 
-  final FileInfo info;
+  final StorageInfoRow info;
 
   @override
   Widget build(BuildContext context) {

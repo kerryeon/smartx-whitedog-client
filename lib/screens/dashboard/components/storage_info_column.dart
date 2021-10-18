@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants.dart';
-import '../../../models/storage_info.dart';
+import '../../../models/storage_info_column.dart';
 import 'chart.dart';
 
-class StorageInfoView extends StatelessWidget {
-  const StorageInfoView({
+class StorageInfoColumnView extends StatelessWidget {
+  const StorageInfoColumnView({
     Key? key,
   }) : super(key: key);
 
@@ -56,7 +56,7 @@ class StorageInfoCardView extends StatelessWidget {
 }
 
 class StorageInfoCard extends StatelessWidget {
-  final StorageInfo info;
+  final StorageInfoColumn info;
 
   const StorageInfoCard({
     Key? key,

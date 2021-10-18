@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 import '../../responsive.dart';
-import 'components/file_info.dart';
+import 'components/storage_info_row.dart';
 import 'components/header.dart';
-import 'components/recent_file.dart';
-import 'components/storage_info.dart';
+import 'components/file_info_table.dart';
+import 'components/storage_info_column.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({
@@ -29,16 +29,17 @@ class DashboardScreen extends StatelessWidget {
                 flex: 5,
                 child: Column(
                   children: [
-                    const FileInfoView(),
+                    const StorageInfoRowView(),
                     const SizedBox(
                       height: defaultPadding,
                     ),
-                    RecentFileInfoView(),
+                    FileInfoTableView(),
                     if (Responsive.isMobile(context))
                       const SizedBox(
                         height: defaultPadding,
                       ),
-                    if (Responsive.isMobile(context)) const StorageInfoView(),
+                    if (Responsive.isMobile(context))
+                      const StorageInfoColumnView(),
                   ],
                 ),
               ),
@@ -50,7 +51,7 @@ class DashboardScreen extends StatelessWidget {
               if (!Responsive.isMobile(context))
                 const Expanded(
                   flex: 2,
-                  child: StorageInfoView(),
+                  child: StorageInfoColumnView(),
                 ),
             ],
           ),

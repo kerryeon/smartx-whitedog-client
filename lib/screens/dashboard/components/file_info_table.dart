@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:smartx_whitedog_client/screens/dashboard/components/templates/data_table.dart';
 
-import '../../../models/recent_file_info.dart';
+import '../../../models/file_info.dart';
 
-class RecentFileInfoView extends DataTableView<RecentFileInfo> {
-  RecentFileInfoView({
+class FileInfoTableView extends DataTableView<FileInfo> {
+  FileInfoTableView({
     Key? key,
   }) : super(
           key: key,
-          tableKey: RecentFileInfoKey(),
+          tableKey: FileInfoKey(),
           items: demoRecentFiles,
         );
 }
