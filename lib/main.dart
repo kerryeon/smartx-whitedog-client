@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'constants.dart';
-import 'controllers/MenuController.dart';
+import 'controllers/menu_controller.dart';
 import 'screens/main/main_screen.dart';
 
 void main() {

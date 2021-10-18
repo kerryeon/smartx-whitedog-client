@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
-import '../../../models/MyFiles.dart';
+import '../../../models/my_files.dart';
 import '../../../responsive.dart';
 import 'file_info_card.dart';
 
